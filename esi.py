@@ -219,7 +219,7 @@ class ESIConnector:
                 kill = await response.json(content_type=None)
                 if progress_bar:
                     progress_bar.update(1)
-                return kill
+                return kill_id, kill
             except json.decoder.JSONDecodeError:
                 return await self.get_kill(kill_id, kill_hash, progress_bar)
 
